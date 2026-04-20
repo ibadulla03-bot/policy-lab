@@ -11,7 +11,11 @@ export default function RolesScreen() {
 
   function handleReveal(id: number) {
     if (flipped.has(id)) return;
-    setFlipped((prev) => new Set([...prev, id]));
+  setFlipped((prev) => {
+  const next = new Set(prev);
+  next.add(id);
+  return next;
+});
     revealRole(id);
   }
 
