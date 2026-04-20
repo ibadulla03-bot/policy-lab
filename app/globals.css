@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --green-dark: #0d5c3a;
+  --green-mid: #1D9E75;
+  --green-light: #e8f5ee;
+  --green-border: #a8d5b8;
+  --amber: #e8a000;
+  --amber-dark: #8a5a00;
+  --amber-light: #fdf8e8;
+  --amber-border: #e8d580;
+  --red-crisis: #8a2000;
+  --red-light: #fdf0ee;
+  --red-border: #f0b8ad;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  background: #f7f8f5;
+  color: #1a1a1a;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Screen transitions */
+.screen-enter {
+  animation: fadeSlideUp 0.3s ease forwards;
+}
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Bar animation */
+.bar-animate {
+  animation: growBar 0.8s ease forwards;
+}
+
+@keyframes growBar {
+  from { width: 0% }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: #c8d8c8; border-radius: 3px; }
