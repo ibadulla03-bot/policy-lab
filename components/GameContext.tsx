@@ -46,7 +46,11 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   const revealRole = useCallback((id: number) => {
-    setRevealedRoles((prev) => new Set([...prev, id]));
+    setRevealedRoles((prev) => {
+  const next = new Set(prev);
+  next.add(id);
+  return next;
+});
   }, []);
 
   const setMembers = useCallback((ids: number[]) => {
